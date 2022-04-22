@@ -1,0 +1,94 @@
+<mvc:View controllerName="HCM_ATT_9535.controller.View1" xmlns:form="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+<!--					<OverflowToolbar>
+						<core:Icon class="sapUiSmallMarginBegin" visible="{=!${device>/browser/mobile}}" src="sap-icon://message-information"/>
+						<Text wrapping="false" visible="{=!${device>/browser/mobile}}" text="Os campos com * são obrigatórios"/>
+						<ToolbarSpacer/>
+					</OverflowToolbar>-->
+					<form:SimpleForm id="Form" editable="true" layout="ResponsiveGridLayout" labelSpanXL="2" labelSpanL="2" labelSpanM="12" labelSpanS="12"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="2" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+						singleContainerFullSize="false">
+						<core:Title text=""/>
+						<!--	<Label text="Pernr" required="true" visible="false"/>
+						<Input id="pernr" type="Text" required="true" visible="false"/>
+						<Label text="Begda" required="true" visible="false"/>
+						<Input id="begda" type="Text" required="true" visible="false"/>
+						<Label text="Endda" required="true" visible="false"/>
+						<Input id="endda" type="Text" required="true" visible="false"/>-->
+						<Label text="Médico"/>
+						<Input id="znome" type="Text" maxLength="40" placeholder="Nome do Médico"/>
+						<Label text="CRM"/>
+						<Input id="zcrm" type="Number" maxLength="8" placeholder="CRM"/>
+						<Label text="CID 10"/>
+						<Input id="dialogExame" type="Text" maxLength="6" showSuggestion="true" showValueHelp="true"
+							valueHelpRequest="handleValueHelp" suggestionItems="{/results}" placeholder="CID 10">
+							<suggestionItems>
+								<core:Item text="{Zcid}"/>
+							</suggestionItems>
+						</Input>
+						<!--	<Label text="CID Co-Relato"/>
+						<Input id="gbort" type="Text" placeholder="CID Co-Relato"/> -->
+						<Label text="Emitente"/>
+						<Input id="issuer_name" type="Text" placeholder="Nome do Emitente"/>
+						<core:Title text=""/>
+						<Label text="Nº inscrição"/>
+						<Input id="issuer_number" type="Number" placeholder="Nº de Inscrição" maxLength="14"/>
+						<Label text="Região"/>
+						<Select width="100%" id="issuer_state">
+							<core:Item key="" text=" "/>
+							<core:Item key="AC" text="AC"/>
+							<core:Item key="AL" text="AL"/>
+							<core:Item key="AM" text="AM"/>
+							<core:Item key="AP" text="AP"/>
+							<core:Item key="BA" text="BA"/>
+							<core:Item key="CE" text="CE"/>
+							<core:Item key="DF" text="DF"/>
+							<core:Item key="ES" text="ES"/>
+							<core:Item key="GO" text="GO"/>
+							<core:Item key="MA" text="MA"/>
+							<core:Item key="MG" text="MG"/>
+							<core:Item key="MS" text="MS"/>
+							<core:Item key="MT" text="MT"/>
+							<core:Item key="PA" text="PA"/>
+							<core:Item key="PB" text="PB"/>
+							<core:Item key="PE" text="PE"/>
+							<core:Item key="PI" text="PI"/>
+							<core:Item key="PR" text="PR"/>
+							<core:Item key="RJ" text="RJ"/>
+							<core:Item key="RN" text="RN"/>
+							<core:Item key="RO" text="RO"/>
+							<core:Item key="RR" text="RR"/>
+							<core:Item key="RS" text="RS"/>
+							<core:Item key="SC" text="SC"/>
+							<core:Item key="SE" text="SE"/>
+							<core:Item key="SP" text="SP"/>
+							<core:Item key="TO" text="TO"/>
+						</Select>
+						<Label text="Id.Órgão de Classe"/>
+						<Select width="100%" id="issuer_oc_id">
+							<core:Item key="" text=""/>
+							<core:Item key="1" text="Conselho Regional de Medicina (CRM)"/>
+							<core:Item key="2" text="Conselho Regional de Odontolodia (CRO)"/>
+							<core:Item key="3" text="Registro do Ministério da Saúde (RMS)"/>
+						</Select>
+						<Label text="CNPJ do Cessionário"/>
+						<Input id="assignee_cnpj" type="Text" placeholder="CNPJ do Cessionário" maxLength="14"/>
+					</form:SimpleForm>
+				</content>
+				<footer>
+					<OverflowToolbar id="otbFooter">
+						<ToolbarSpacer/>
+						<Button id="Update" text="Atualizar" press="UpdateExame" visible="false"/>
+						<Button id="Delete" text="Deletar" press="DeleteExame" visible="false"/>
+						<Button id="Save" text="Salvar" press="Update" visible="true"/>
+						<Button id="Cancel" text="Cancelar" press="onNavBackView1" visible="false"/>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
